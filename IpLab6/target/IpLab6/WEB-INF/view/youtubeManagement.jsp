@@ -225,26 +225,25 @@ section {
       </button>
     </div>
 
-     <section>
-    <% 
-    @SuppressWarnings("unchecked")
-        List<Map<String, String>> videos = (List<Map<String, String>>) request.getAttribute("youtubeVideos");
-        if (videos != null) {
-            for (Map<String, String> video : videos) {
-    %>
+     <section></section>
+  <script>
+    const videoSection = document.querySelector("section");
+
+    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUMewsBNOIn0_D2KrrR7sWig&key=AIzaSyCqUHZEU-LoOYB5YcX6R1eoxrMgM6ModxI')
+    .then(res => res.json())
+    .then(data => {
+        data.items.forEach(curr => {
+            videoSection.innerHTML +=`
             <div class="yt-video">
-                <iframe src="https://www.youtube.com/embed/<%= video.get("videoId") %>" allowfullscreen></iframe>
-                <h3><%= video.get("title") %></h3>
-            </div>
-    <% 
-            }
-        } else { 
-    %>
-        <p>No videos available.</p>
-    <% 
-        }
-    %>
-</section>
+                <iframe src="https://www.youtube.com/embed/${curr.snippet.resourceId.videoId}" allowfullscreen> </iframe>
+                <h3>${curr.snippet.title}</h3>
+            </div>`;
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+</script>
 
   
 </body>

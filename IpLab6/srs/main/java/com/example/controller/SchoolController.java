@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.Model.Activity;
+import com.example.Model.Client;
 import com.example.Model.School;
 import com.example.service.ActivityService;
+import com.example.service.FitnessProgramService;
 import com.example.service.SchoolService;
 import com.example.viewmodel.SchoolViewModel;
 
@@ -127,6 +129,17 @@ public class SchoolController {
             model.addAttribute("error", "User not found.");
             return "error"; // Replace with an actual error page or handle accordingly
         }
+    }
+	
+    @GetMapping("/activityList")
+    public String showProgramList(Model model, HttpSession session) {
+        // Retrieve the logged-in client (admin) from the session
+        School school = (School) session.getAttribute("loggedInSchool");
+        model.addAttribute("school", school);
+
+        // Get the list of all programs from the service layer
+        model.addAttribute("activityList", ActivityService.getActivityList());
+        return "activityList";  // This will show the list of all programs
     }
 		
 }

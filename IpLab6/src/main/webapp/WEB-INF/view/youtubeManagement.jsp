@@ -189,9 +189,11 @@ section {
 <body>
     <h1>Your School</h1>
     <h2>Sekolah Kebangsaan (FELDA) Bukit Waha</h2>
+    
 
     <div class="header">
-      <div class="left-section">
+      <div class="left-section
+      
         <div class="logo">TOPSS CENTRAL</div>        
       </div>
 
@@ -217,7 +219,7 @@ section {
           <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
           <li><a href="#"><i class="fas fa-users"></i> Members</a></li>
           <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>          
-          <li><a href="#"><i class="fas fa-chart-line"></i> Activity</a></li>     
+          <li><a href="/IpLab6/activityList""><i class="fas fa-chart-line"></i> Activity</a></li>     
           <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
         </ul>
       </nav>
@@ -225,26 +227,25 @@ section {
       </button>
     </div>
 
-     <section>
-    <% 
-    @SuppressWarnings("unchecked")
-        List<Map<String, String>> videos = (List<Map<String, String>>) request.getAttribute("youtubeVideos");
-        if (videos != null) {
-            for (Map<String, String> video : videos) {
-    %>
+     <section></section>
+  <script>
+    const videoSection = document.querySelector("section");
+
+    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUMewsBNOIn0_D2KrrR7sWig&key=AIzaSyCqUHZEU-LoOYB5YcX6R1eoxrMgM6ModxI')
+    .then(res => res.json())
+    .then(data => {
+        data.items.forEach(curr => {
+            videoSection.innerHTML +=`
             <div class="yt-video">
-                <iframe src="https://www.youtube.com/embed/<%= video.get("videoId") %>" allowfullscreen></iframe>
-                <h3><%= video.get("title") %></h3>
-            </div>
-    <% 
-            }
-        } else { 
-    %>
-        <p>No videos available.</p>
-    <% 
-        }
-    %>
-</section>
+                <iframe src="https://www.youtube.com/embed/${curr.snippet.resourceId.videoId}" allowfullscreen> </iframe>
+                <h3>${curr.snippet.title}</h3>
+            </div>`;
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+</script>
 
   
 </body>
