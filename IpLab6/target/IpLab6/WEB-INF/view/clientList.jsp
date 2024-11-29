@@ -28,7 +28,12 @@
 			        	<th scope="row">${status.index + 1}</th>
 			            <td>${client.name}</td> 
 			            <td>${client.email}</td>
-			            <td></td> 
+			            <td>
+			            <form action="/IpLab6/deleteClient" method="post">
+			                <input type="hidden" name="email" value="${client.email}">
+			                <button class="btn btn-danger" type="submit">Delete</button>
+			            </form>
+			            </td> 
 			        </tr>
 				</c:forEach>
 			</tbody>

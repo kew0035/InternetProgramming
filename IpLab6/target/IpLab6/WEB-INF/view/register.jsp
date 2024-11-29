@@ -11,7 +11,7 @@
 <title>Register</title>
 <style>
         body {
-            background-color: lightblue;
+            background-color: lightgreen;
         }
         .container {
             background-color: white;
@@ -21,16 +21,16 @@
 <body>
     <div class="container mt-5 p-3 w-50">
         <h2 class="mb-4">Register</h2>
-        <form action="/IpLab6/register" method="post" class="border p-4 rounded shadow-sm mb-3">
+        <form action="/diu/register" method="post" class="border p-4 rounded shadow-sm mb-3">
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
-                <input type="text" id="name" name="name" class="form-control" value="${client.name}">
+                <input type="text" id="name" name="name" class="form-control" value="${school.name}">
                 <span class="text-danger">${errors['nameError']}</span>
             </div>
             
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="text" id="email" name="email" class="form-control" value="${client.email}">
+                <input type="text" id="email" name="email" class="form-control" value="${school.email}">
                 <span class="text-danger">${errors['emailError']}</span>
             </div>
             
@@ -40,32 +40,23 @@
                 <span class="text-danger">${errors['passwordError']}</span>
             </div>
             
-            <div class="mb-3">
-                <label for="gender" class="form-label">Gender:</label>
-                <select id="gender" name="gender" class="form-select">
-                    <option value="">Select</option>
-                    <option value="Male" ${client.gender == 'Male' ? 'selected' : ''}>Male</option>
-                    <option value="Female" ${client.gender == 'Female' ? 'selected' : ''}>Female</option>
-                </select>
-                <span class="text-danger">${errors['genderError']}</span>
-            </div>
             
             <div class="row mb-3">
 			    <div class="col">
-			    	<label for="height" class="form-label">Height(m):</label>
-			        <input type="number" id="height" name="height" class="form-control" value="${client.height == 0 ? '': client.height}">
+			    	<label for="totalStudent" class="form-label">Total Student</label>
+			        <input type="number" id="totalStudent" name="tottalStudent" class="form-control" value="${school.totalStudent == 0 ? '': school.totalStudent}">
 			        <span class="text-danger">${errors['heightError']}</span>
 			    </div>
 			    <div class="col">
-			      <label for="weight" class="form-label">Weight(kg):</label>
-			      <input type="number" id="weight" name="weight" class="form-control" value="${client.weight == 0 ? '': client.weight}">
+			      <label for="student" class="form-label">Student</label>
+			      <input type="number" id="student" name="student" class="form-control" value="${school.student == 0 ? '': school.student}">
 			      <span class="text-danger">${errors['weightError']}</span>
 			    </div>
 			</div>
             
             <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>
-        <button class="btn btn-success" onclick="location.href='/IpLab6/login'">
+        <button class="btn btn-success" onclick="location.href='/diu/login'">
 		    Go to Login
 		</button>
     </div>

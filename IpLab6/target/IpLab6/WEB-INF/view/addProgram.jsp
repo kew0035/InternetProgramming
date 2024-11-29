@@ -15,19 +15,19 @@
 		<form action="/IpLab6/addProgram" method="post" class="border p-4 rounded shadow-sm mb-3">
 			<div class="mb-3">
 			    <label for="name" class="form-label">Program Name</label>
-			    <input class="form-control" type="text" id="name" name="name" value="${program.name}">
+			    <input class="form-control" type="text" id="name" name="name" value="${program.name}" required>
 			    <div class="text-danger">${errors.nameError}</div>
 			</div>
 			
 			<div class="mb-3">
 			    <label for="description" class="form-label">Program Description</label>
-			    <input class="form-control" type="text" id="description" name="description" value="${program.description}">
+			    <input class="form-control" type="text" id="description" name="description" value="${program.description}" required>
 			    <div class="text-danger">${errors.descriptionError}</div>
 			</div>
 			
 			<div class="mb-3">
 			    <label for="duration" class="form-label">Program Duration</label>
-			    <input class="form-control" type="number" id="duration" name="duration" value="${program.duration}" min="1">
+			    <input class="form-control" type="number" id="duration" name="duration" value="${program.duration}" min="1" required>
 			    <div class="text-danger">${errors.programError}</div>
 			</div>
 

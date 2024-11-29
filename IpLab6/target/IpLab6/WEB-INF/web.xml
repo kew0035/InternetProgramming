@@ -13,11 +13,24 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-
-  <servlet-mapping>
+  
+    <servlet-mapping>
     <servlet-name>myFrontController</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>YoutubeManagementServlet</servlet-name>
+    <servlet-class>com.example.YoutubeManagementServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>YoutubeManagementServlet</servlet-name>
+    <url-pattern>/youtubeManagement</url-pattern>
+</servlet-mapping>
+  
+
+
 
 	<jsp-config>
 		<taglib>

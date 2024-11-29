@@ -24,19 +24,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="client" items="${programList}" varStatus="status">
+				<c:forEach var="program" items="${programList}" varStatus="status">
 			        <tr>
 			        	<th scope="row">${status.index + 1}</th>
 			            <td>${program.name}</td> 
 			            <td>${program.description}</td>
 			            <td>${program.duration}</td>
+			            <td><button class="btn btn-primary" type="submit">Join</button></td>
 			            <td></td> 
 			        </tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-
-
 </body>
 </html>

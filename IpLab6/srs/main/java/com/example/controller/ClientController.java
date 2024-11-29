@@ -19,7 +19,7 @@ import com.example.viewmodel.ClientViewModel;
 @Controller
 public class ClientController {
 	
-	@GetMapping("/register")
+	@GetMapping("/ccregister")
     public String showRegisterForm(Model model) {
 		List<FitnessProgram> programList = FitnessProgramService.getProgramList();
 	    model.addAttribute("programList", programList);	
@@ -27,12 +27,12 @@ public class ClientController {
         return "register";
     }
 	
-	@GetMapping("/login")
+	@GetMapping("/cclogin")
 	public String showLoginForm() {
 		return "login";
 	}
 	
-	@PostMapping("/register")
+	@PostMapping("/ccregister")
 	public String processRegisterForm(@ModelAttribute("client")Client client,Model model) {
         Map<String, String> errors = new HashMap<>();
 
@@ -91,7 +91,7 @@ public class ClientController {
 		return "login";
     }
 	
-	@PostMapping("/login")
+	@PostMapping("/cclogin")
 	public String processLoginForm(@ModelAttribute("client") Client client, Model model, HttpSession session) {
 	    // Find the matching client from the client list
 	    Client matchedClient = ClientService.getClientList().stream()
