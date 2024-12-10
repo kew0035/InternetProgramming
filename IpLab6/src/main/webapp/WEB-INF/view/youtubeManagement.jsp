@@ -192,9 +192,9 @@ section {
     
 
     <div class="header">
-      <div class="left-section
+      <div> class="left-section
       
-        <div class="logo">TOPSS CENTRAL</div>        
+        <div> class="logo">TOPSS CENTRAL</div>        
       </div>
 
 
@@ -209,7 +209,6 @@ section {
         <img class="current-user-picture" src="https://media.licdn.com/dms/image/v2/D4E03AQGIyRHDpvcumQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676035880861?e=1738195200&v=beta&t=sR7rBJODiMJcAYT_BYKBBdaOO7K-TuDDvdy5TqtXPYU" alt="">
       </div>    
     </div>
-
 
 
     <div class="sidebar">

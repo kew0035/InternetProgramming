@@ -21,7 +21,7 @@
 <body>
     <div class="container mt-5 p-3 w-50">
         <h2 class="mb-4">Register</h2>
-        <form action="/diu/register" method="post" class="border p-4 rounded shadow-sm mb-3">
+        <form action="/IpLab6/register" method="post" class="border p-4 rounded shadow-sm mb-3">
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
                 <input type="text" id="name" name="name" class="form-control" value="${school.name}">
@@ -56,7 +56,7 @@
             
             <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>
-        <button class="btn btn-success" onclick="location.href='/diu/login'">
+        <button class="btn btn-success" onclick="location.href='/IpLab6/login'">
 		    Go to Login
 		</button>
     </div>

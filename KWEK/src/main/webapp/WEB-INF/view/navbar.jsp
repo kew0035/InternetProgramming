@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/IpLab6/profile">Profile</a>
+          <a class="nav-link active" aria-current="page" href="/KWEK/profile">Profile</a>
         </li>
         <c:if test="${client.role eq 'admin'}">
         <li class="nav-item">

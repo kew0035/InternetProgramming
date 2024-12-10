@@ -189,9 +189,11 @@ section {
 <body>
     <h1>Your School</h1>
     <h2>Sekolah Kebangsaan (FELDA) Bukit Waha</h2>
+    
 
     <div class="header">
-      <div class="left-section">
+      <div class="left-section
+      
         <div class="logo">TOPSS CENTRAL</div>        
       </div>
 
@@ -217,7 +219,7 @@ section {
           <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
           <li><a href="#"><i class="fas fa-users"></i> Members</a></li>
           <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>          
-          <li><a href="#"><i class="fas fa-chart-line"></i> Activity</a></li>     
+          <li><a href="/IpLab6/activityList""><i class="fas fa-chart-line"></i> Activity</a></li>     
           <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
         </ul>
       </nav>

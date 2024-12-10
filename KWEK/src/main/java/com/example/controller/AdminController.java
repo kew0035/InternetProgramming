@@ -97,11 +97,7 @@ public class AdminController {
     public String deleteClient(@RequestParam("email") String email, Model model) {
         boolean success = ClientService.deleteClient(email);
         
-        if (success) {
-            model.addAttribute("message", "Client successfully deleted.");
-        } else {
-            model.addAttribute("message", "Client not found.");
-        }
+        
 
         // After deletion, you might want to refresh the client list or redirect to the same page.
         return "redirect:/clientList"; // Redirect back to client list page

@@ -24,25 +24,25 @@
         <form action="/KWEK/register" method="post" class="border p-4 rounded shadow-sm mb-3">
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
-                <input type="text" id="name" name="name" class="form-control" value="${client.name}">
+                <input type="text" id="name" name="name" class="form-control" value="${client.name}" required>
                 <span class="text-danger">${errors['nameError']}</span>
             </div>
             
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="text" id="email" name="email" class="form-control" value="${client.email}">
+                <input type="text" id="email" name="email" class="form-control" value="${client.email}" required>
                 <span class="text-danger">${errors['emailError']}</span>
             </div>
             
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <input type="password" id="password" name="password" class="form-control" required>
                 <span class="text-danger">${errors['passwordError']}</span>
             </div>
             
             <div class="mb-3">
                 <label for="gender" class="form-label">Gender:</label>
-                <select id="gender" name="gender" class="form-select">
+                <select id="gender" name="gender" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Male" ${client.gender == 'Male' ? 'selected' : ''}>Male</option>
                     <option value="Female" ${client.gender == 'Female' ? 'selected' : ''}>Female</option>
@@ -53,12 +53,12 @@
             <div class="row mb-3">
 			    <div class="col">
 			    	<label for="height" class="form-label">Height(m):</label>
-			        <input type="number" id="height" name="height" class="form-control" value="${client.height == 0 ? '': client.height}">
+			        <input type="number" id="height" name="height" class="form-control" value="${client.height == 0 ? '': client.height}" required>
 			        <span class="text-danger">${errors['heightError']}</span>
 			    </div>
 			    <div class="col">
 			      <label for="weight" class="form-label">Weight(kg):</label>
-			      <input type="number" id="weight" name="weight" class="form-control" value="${client.weight == 0 ? '': client.weight}">
+			      <input type="number" id="weight" name="weight" class="form-control" value="${client.weight == 0 ? '': client.weight}" required>
 			      <span class="text-danger">${errors['weightError']}</span>
 			    </div>
 			</div>
