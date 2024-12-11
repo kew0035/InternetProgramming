@@ -295,7 +295,7 @@ background-color: navy;
 				<li><a href=""><i class="bi bi-people"></i>Members</a></li>
 				<li><a href=""><i class="bi bi-gear"></i>Settings</a></li>
 				<li><a href=""><i class="bi bi-calendar"></i>Activity</a></li>
-				<li><a href="<c:url value='/youtubeManagement'></c:url>"><i class="bi bi-youtube"></i> YouTube</a></li>
+				<li><a href="/GProject01/youtubeManagement"><i class="bi bi-youtube"></i>YouTube</a></li>
 			</ul>
 		</div>
 		<div>

@@ -1,280 +1,159 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ page isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous" />
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-	crossorigin="anonymous"></script>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/style.css" />"/>
-<html>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
+
 <style>
-body {
-	display: grid;
-	grid-template-areas: "left-menu content";
-	grid-template-rows: 1fr; /* Content */
-	grid-template-columns: 180px 1fr; /* Left Menu, Content*/
-	min-height: 100vh;
-	background-color: black;
-	margin: 0;
+p{
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-* {
-	margin: 0;
-	box-sizing: border-box;
-	font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-		sans-serif;
-	box-sizing: border-box;
+body{
+  margin: 0;
+  padding-top: 80px;
+  padding-left: 256px;
+  padding-right: 24px;
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
-main {
-	grid-area: content;
-	color: white;
-	padding: 10px;
+
+
+.header{
+  height: 55px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;  
+  background-color: #121212;
 }
 
+
+.left-section{
+  display: flex;
+  align-items: center;
+  background-color:  #1e1e1e;
+  width: 200px;
+}
 .logo {
-	padding: 10px;
-	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #d4af37;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 15px;
 }
 
-.left-menu {
-	grid-area: left-menu;
-	position: fixed;
-	top: 0;
-    left: 0;
-    width: 180px; /* Set fixed width */
-    height: 100vh; /* Full viewport height */
-	background-color: #1B1F20;
-	color: white;
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
+
+
+.middle-section{
+  flex: 1;
+  margin-left: -580px;
+  margin-right: 35px;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+.search-bar{
+  flex: 1;
+  height: 36px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 0;
+}
+.search-bar::placeholder{
+  font-family: Mooli, Arial;
+  font-size: 16px;
 }
 
-.left-menu ul {
-	list-style: none;
-	padding: 0;
+
+
+.right-section{
+  margin-right: 20px;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.current-user-picture{
+  height: 32px;
+  border-radius: 16px;
 }
 
-.left-menu a {
-	text-decoration: none;
-	display: block;
-	text-align: left;
-	color: gray;
-	padding: 10px;
-}
 
-.left-menu a:hover {
-	background-color: #2B2A2A;
-	border: solid 1px;
-	border-radius: 5px;
+.sidebar{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 55px;
+  background-color:  #1e1e1e;
+  width: 200px;
+  z-index: 200;
+  padding-top: 5px;
+  
 }
-
-.left-menu a:active {
-	background-color: #2B2A2A;
-	color: #36BCBD;
-	border: solid 1px;
-	border-radius: 5px;
+.sidebar nav ul {
+    list-style: none;
 }
-
-i {
-	padding: 15px;
+.sidebar nav ul li {
+    margin-left: 0;
+    margin-top: 30px;
+    width: 100%;
 }
-
-.search-container {
-	justify-content: flex-start;
-	width: 40%;
-	justify-content: flex-start;
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
 }
-
-.top-row-container {
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap:wrap;
-	gap:10px;
+.sidebar nav ul li a i {
+    margin-right: 20px; 
+    font-size: 18px;
 }
-
-.corner-container {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+.sidebar nav ul li a:hover {
+    color: #d4af37;
 }
-
-.corner-profile {
-	font-size: 13px;
-}
-
-i.bi.bi-bell {
-	font-size: 28px;
-}
-
-i.bi-person-circle {
-	font-size: 23px;
-}
-
-.content {
-	padding: 10px;
-}
-
-.widgets-container {
-	display: flex;
-	justify-content: space-between;
-	padding: 10px;
-	flex-direction: column;
-}
-
-.top-widgets-row-container {
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
-}
-
-.top-widgets {
-	width: 300px;
-	height: 100px;
-	border-radius: 5px;
-	background-color: green;
-	padding: 10px;
-}
-#top-widgets-2-container{
-background-color: purple;
-}
-#top-widgets-3-container{
-background-color: navy;
-}
-
-.bottom-widgets-row-container {
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
-	height: auto;
-	padding: 20px 10px;
-}
-
-.bottom-widgets-left-container {
-	width: 45%;
-	height: auto;
-	border-radius: 5px;
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	gap: 20px;
-}
-
-.bottom-widgets-right-container {
-	width: 55%;
-	height: auto;
-	border-radius: 5px;
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	gap: 20px;
-}
-
-.bottom-left-widgets {
-	width: 80%;
-	height: 100px;
-	border-radius: 5px;
-	background-color: #1B1F20;
-	padding: 10px;
-	overflow: hidden;
-}
-.bottom-right-widgets {
-	width: 80%;
-	height: 40px;
-	border-radius: 5px;
-	background-color: #1B1F20;
-	padding: 10px;
-	display:flex;
-	justify-content: space-between;
-	overflow: hidden;
-}
-
-.chart {
-    height: 35px;
-    font-size: small;
-    font-weight: 600;
-    margin: 10px 10px 10px 0;
+.logout-btn {
+    background-color: #d32f2f;
+    border: none;
+    color: #fff;
     padding: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: black; /* Initial background */
-    width: 25%; /* Initial width */
-    animation-duration: 4.5s;
-    animation-iteration-count: 1; /* Runs once */
-    animation-fill-mode: forwards; /* Retain final animation state */
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-left: 40px;
+    margin-top: 350px;
+    cursor: pointer;
+}
+.logout-btn i {
+    margin-right: 5px;
 }
 
-/* Assign specific animations to charts */
-#chart1 {
-    animation-name: auto-transform70;
-}
 
-#chart2 {
-    animation-name: auto-transform80;
-}
-
-#chart3 {
-    animation-name: auto-transform70;
-}
-
-/* Keyframes for auto-transform70 */
-@keyframes auto-transform70 {
-    0% {
-        width: 25%;
-        background-color: black;
-    }
-    10% {
-        background-color: red;
-    }
-    30% {
-        background-color: orange;
-    }
-    50% {
-        background-color: rgb(255, 221, 0);
-    }
-    100% {
-        width: 60%;
-        background-color: rgb(255, 221, 0);
-    }
-}
-
-/* Keyframes for auto-transform80 */
-@keyframes auto-transform80 {
-    0% {
-        width: 25%;
-        background-color: black;
-    }
-    10% {
-        background-color: red;
-    }
-    30% {
-        background-color: orange;
-    }
-    50% {
-        background-color: rgb(255, 221, 0);
-    }
-    70% {
-        background-color: rgb(167, 196, 20);
-    }
-    100% {
-        width: 65%;
-        background-color: rgb(167, 196, 20);
-    }
-}
 
 section {
   display: flex;
@@ -296,90 +175,69 @@ section {
   font-size: 16px; 
   margin-top: 10px;
 }
-</style>
 
-<head>
-<title>Youtube Management</title>
+
+  </style>
 </head>
+
 <body>
-	<nav class="left-menu">
-		<div>
-			<div class="logo">
-				<h2>
-					<b>TVPSS Central</b>
-				</h2>
-			</div>
+    <h1>Your School</h1>
+    <h2>Sekolah Kebangsaan (FELDA) Bukit Waha</h2>
 
-			<ul>
-				<li><a href=""><i class="bi bi-ui-checks-grid"></i> Home</a></li>
-				<li><a href=""><i class="bi bi-chat-square-dots"></i>Messages</a></li>
-				<li><a href=""><i class="bi bi-people"></i>Members</a></li>
-				<li><a href=""><i class="bi bi-gear"></i>Settings</a></li>
-				<li><a href=""><i class="bi bi-calendar"></i>Activity</a></li>
-				<li><a href="<c:url value='/youtubeManagement' />"><i class="bi bi-youtube"></i> YouTube</a></li>
+    <div class="header">
+      <div class="left-section">
+        <div class="logo">TOPSS CENTRAL</div>        
+      </div>
 
 
-
-				
-
-
-			</ul>
-		</div>
-		<div>
-			<button type="button" class="btn btn-light">
-				<i class="bi bi-box-arrow-right"></i> Log out
-			</button>
-		</div>
-	</nav>
-
-	<main>
-		<div class="top-row-container">
-			<div class="search-container">
-				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Search"
-						aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
-			</div>
-
-			<div class="corner-container">
-				<div>
-					<i class="bi bi-bell"></i>
-				</div>
-				<div class="corner-profile">
-					Adam Selamat <br> Skudai, Malaysia
-				</div>
-				<div>
-					<i class="bi bi-person-circle"></i>
-				</div>
-
-			</div>
-		</div>
+      <div class="middle-section">
+        <input class="search-bar" type="text" placeholder="Search">        
+        </button> 
+      </div>
 
 
+      <div class="right-section">
+        <span>Adam Selamat</span>
+        <span>Skudai, Malaysia</span>    
+        <img class="current-user-picture" src="icons/JC.jpg" alt="">
+      </div>    
+    </div>
+
+
+
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Members</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="#"><i class="fas fa-chart-line"></i> Activity</a></li>
+        </ul>
+      </nav>
+      <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Log out
+      </button>
+    </div>
 
   <section></section>
-
   <script>
-      const videoSection = document.querySelector("section");
+    const videoSection = document.querySelector("section");
 
-      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUMewsBNOIn0_D2KrrR7sWig&key=AIzaSyCqUHZEU-LoOYB5YcX6R1eoxrMgM6ModxI')
-      .then(res => res.json())
-      .then(data => {
-          data.items.forEach(curr => {
-              videoSection.innerHTML +=`
-              <div class="yt-video">
-                  <iframe src="https://www.youtube.com/embed/${curr.snippet.resourceId.videoId}" allowfullscreen> </iframe>
-                  <h3>${curr.snippet.title}</h3>
-              </div>`;
-          });
-      })
-      .catch(error => {
-          console.error('Error fetching data:', error);
-      });
-  </script>
-
-	</main>
-
+    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUMewsBNOIn0_D2KrrR7sWig&key=AIzaSyCqUHZEU-LoOYB5YcX6R1eoxrMgM6ModxI')
+    .then(res => res.json())
+    .then(data => {
+        data.items.forEach(curr => {
+            videoSection.innerHTML +=`
+            <div class="yt-video">
+                <iframe src="https://www.youtube.com/embed/${curr.snippet.resourceId.videoId}" allowfullscreen> </iframe>
+                <h3>${curr.snippet.title}</h3>
+            </div>`;
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+</script>
+  
 </body>
 </html>

@@ -11,7 +11,9 @@
 	crossorigin="anonymous"></script>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/style.css" />"/>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/resources/style.css"  />
+"/>
 <html>
 <style>
 body {
@@ -48,9 +50,9 @@ main {
 	grid-area: left-menu;
 	position: fixed;
 	top: 0;
-    left: 0;
-    width: 180px; /* Set fixed width */
-    height: 100vh; /* Full viewport height */
+	left: 0;
+	width: 180px; /* Set fixed width */
+	height: 100vh; /* Full viewport height */
 	background-color: #1B1F20;
 	color: white;
 	padding: 10px;
@@ -133,8 +135,8 @@ i.bi-person-circle {
 	display: flex;
 	justify-content: space-around;
 	width: 100%;
-	flex-wrap:wrap;
-	gap:10px;
+	flex-wrap: wrap;
+	gap: 10px;
 }
 
 .top-widgets {
@@ -144,11 +146,13 @@ i.bi-person-circle {
 	background-color: green;
 	padding: 10px;
 }
-#top-widgets-2-container{
-background-color: purple;
+
+#top-widgets-2-container {
+	background-color: purple;
 }
-#top-widgets-3-container{
-background-color: navy;
+
+#top-widgets-3-container {
+	background-color: navy;
 }
 
 .bottom-widgets-row-container {
@@ -177,7 +181,7 @@ background-color: navy;
 	padding: 10px;
 	display: flex;
 	justify-content: space-between;
-		flex-direction: column;
+	flex-direction: column;
 	gap: 20px;
 }
 
@@ -189,107 +193,126 @@ background-color: navy;
 	padding: 10px;
 	overflow: hidden;
 }
+
 .bottom-right-widgets {
 	width: 80%;
 	height: auto;
 	border-radius: 5px;
 	background-color: #1B1F20;
 	padding: 10px;
-	display:flex;
+	display: flex;
 	justify-content: space-between;
 	overflow: hidden;
 }
 
 .chart {
-    height: 35px;
-    font-size: small;
-    font-weight: 600;
-    margin: 10px 10px 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: black; /* Initial background */
-    width: 25%; /* Initial width */
-    animation-duration: 4.5s;
-    animation-iteration-count: 1; /* Runs once */
-    animation-fill-mode: forwards; /* Retain final animation state */
+	height: 35px;
+	font-size: small;
+	font-weight: 600;
+	margin: 10px 10px 10px 0;
+	padding: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: black; /* Initial background */
+	width: 25%; /* Initial width */
+	animation-duration: 4.5s;
+	animation-iteration-count: 1; /* Runs once */
+	animation-fill-mode: forwards; /* Retain final animation state */
 }
 
 /* Assign specific animations to charts */
 #chart1 {
 	background-color: red;
-    animation-name: auto-transform70;
+	animation-name: auto-transform70;
 }
 
 #chart2 {
 	background-color: orange;
-    animation-name: auto-transform100;
+	animation-name: auto-transform100;
 }
 
 #chart3 {
 	background-color: olive;
-    animation-name: auto-transform80;
+	animation-name: auto-transform80;
 }
+
 #chart4 {
 	background-color: green;
-    animation-name: auto-transform70;
+	animation-name: auto-transform70;
 }
 
 /* Keyframes for auto-transform70 */
-@keyframes auto-transform70 {
-    0% {
-        width: 25%;
-        background-color: black;
-    }
+@
+keyframes auto-transform70 { 0% {
+	width: 25%;
+	background-color: black;
+}
 
-    100% {
-        width: 60%;
-    }
+100
+%
+{
+width
+:
+60%;
+}
 }
 
 /* Keyframes for auto-transform80 */
-@keyframes auto-transform80 {
-    0% {
-        width: 25%;
-        background-color: black;
-    }
-
-    100% {
-        width: 65%;
-    }
-}
-@keyframes auto-transform100{
-    0% {  /* Starting width */
-        width: 25%;
-        background-color: black;
-     }
-    100% {  /* Ending width */
-        width: 75%; 
-}
+@
+keyframes auto-transform80 { 0% {
+	width: 25%;
+	background-color: black;
 }
 
-.version{
+100
+%
+{
+width
+:
+65%;
+    
+}
+}
+@
+keyframes auto-transform100 { 0% { /* Starting width */
+	width: 25%;
+	background-color: black;
+}
+
+100
+%
+{ /* Ending width */
+width
+:
+75%;
+}
+}
+.version {
 	height: auto;
 	width: auto;
-	border-radius:10px;
+	border-radius: 10px;
 	border: solid 1px;
-	padding:1px 5px;
+	padding: 1px 5px;
 }
-#version-1{
-		border: solid red;
-	color:red;
+
+#version-1 {
+	border: solid red;
+	color: red;
 }
-#version-2{
-		border: solid orange;
-	color:orange;
+
+#version-2 {
+	border: solid orange;
+	color: orange;
 }
-#version-3{
-		border: solid olive;
-	color:olive;
+
+#version-3 {
+	border: solid olive;
+	color: olive;
 }
-#version-4{
-		border: solid green;
-	color:green;
+
+#version-4 {
+	border: solid green;
+	color: green;
 }
 </style>
 
@@ -351,26 +374,32 @@ background-color: navy;
 				<div class="top-widgets-row-container">
 					<div class="top-widgets" id="top-widgets-1-container">
 						<h4>Total Schools</h4>
-						<h3>56 <i class="bi bi-mortarboard-fill"></i></h3>
+						<h3>
+							56 <i class="bi bi-mortarboard-fill"></i>
+						</h3>
 					</div>
 					<div class="top-widgets" id="top-widgets-2-container">
 						<h4>Total Teachers</h4>
-						<h3>1696<i class="bi bi-person-fill"></i></h3>
+						<h3>
+							1696<i class="bi bi-person-fill"></i>
+						</h3>
 					</div>
 					<div class="top-widgets" id="top-widgets-3-container">
 						<h4>Total Staff</h4>
-						<h3>23 <i class="bi bi-person-fill"></i></h3>
+						<h3>
+							23 <i class="bi bi-person-fill"></i>
+						</h3>
 					</div>
 				</div>
 
 				<div class="bottom-widgets-row-container">
 					<div class="bottom-widgets-left-container">
-						<h5>${message} school TVPSS version overview</h5>
+						<h5>${message}school TVPSS version overview</h5>
 						<div class="bottom-left-widgets">
 							<h6>Version 1</h6>
 							<div class="chart" id="chart1">8</div>
 						</div>
-						<div class="bottom-left-widgets" >
+						<div class="bottom-left-widgets">
 							<h6>Version 2</h6>
 							<div class="chart" id="chart2">26</div>
 						</div>
@@ -383,44 +412,106 @@ background-color: navy;
 							<div class="chart" id="chart4">6</div>
 						</div>
 					</div>
+					
+					
 					<div class="bottom-widgets-right-container">
-						<h5>${message} Schools</h5>
-						<div class="bottom-right-widgets">
+						<h5>${message}Schools</h5>
+						<div class="bottom-right-widgets school-info"
+							data-school-name="SEKOLAH KEBANGSAAN (FELDA) BUKIT WAHA"
+							data-school-version="Version 1">
 							<div>SEKOLAH KEBANGSAAN (FELDA) BUKIT WAHA</div>
 							<div class="version" id="version-1">Version 1</div>
 						</div>
-						
+
+
 						<div class="bottom-right-widgets">
 							<div>SEKOLAH KEBANGSAAN BUKIT LINTANG</div>
 							<div class="version" id="version-1">Version 1</div>
 						</div>
-						
+
 						<div class="bottom-right-widgets">
 							<div>SEKOLAH KEBANGSAAN SEDILI BESAR</div>
 							<div class="version" id="version-3">Version 3</div>
 						</div>
-						
+
 						<div class="bottom-right-widgets">
 							<div>SEKOLAH KEBANGSAAN MAWAI</div>
 							<div class="version" id="version-2">Version 2</div>
 						</div>
-						
+
 						<div class="bottom-right-widgets">
 							<div>SEKOLAH KEBANGSAAN JOHOR KAMPONG</div>
 							<div class="version" id="version-2">Version 2</div>
 						</div>
-						
+
 						<div class="bottom-right-widgets">
 							<div>SEKOLAH KEBANGSAAN PANCHOR</div>
 							<div class="version" id="version-4">Version 4</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
 		</div>
 
 	</main>
+	
+	
+	<!-- Modal HTML Structure (Place this right before </body>) -->
+	<div class="modal fade" id="schoolModal" tabindex="-1"
+		aria-labelledby="schoolModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="schoolModalLabel">School
+						Information</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<!-- Content will be dynamically inserted here -->
+					<p id="schoolInfo">Loading school information...</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScript for handling the modal trigger (Place this right before </body>) -->
+	<script>
+		document
+				.querySelectorAll('.school-info')
+				.forEach(
+						function(element) {
+							element
+									.addEventListener(
+											'click',
+											function() {
+												var schoolName = element
+														.getAttribute('data-school-name');
+												var schoolVersion = element
+														.getAttribute('data-school-version');
+
+												// Update the modal content with the school information
+												document
+														.getElementById('schoolModalLabel').innerText = schoolName
+														+ " Information";
+												document
+														.getElementById('schoolInfo').innerText = "This school is running "
+														+ schoolVersion
+														+ " version of TVPSS.";
+
+												// Show the modal
+												var myModal = new bootstrap.Modal(
+														document
+																.getElementById('schoolModal'));
+												myModal.show();
+											});
+						});
+	</script>
 
 </body>
 </html>
